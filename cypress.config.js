@@ -15,7 +15,7 @@ module.exports = defineConfig({
       json: true,
     },
     env: {
-      env: 'dev', // Default environment
+      env: 'saucedemo', // Default environment
     },
     defaultCommandTimeout: 60000,
     pageLoadTimeout: 60000,

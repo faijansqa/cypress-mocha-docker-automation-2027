@@ -1,0 +1,66 @@
+name: Cypress tests in Docker
+
+on:
+  push:
+    branches: [master]
+  pull_request:
+  schedule:
+    - cron: '30 20 * * 1-5'   # 02:00 IST Mon–Fri (cron is in UTC)
+  workflow_dispatch:
+    inputs:
+      spec:
+        description: 'Optional spec path, e.g. cypress/e2e/login.cy.js'
+        required: false
+        default: ''
+
+jobs:
+  cypress:
+    name: Cypress (${{ matrix.browser }})
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    strategy:
+      fail-fast: false          # one browser failing does not cancel the others
+      matrix:
+        browser: [chrome, firefox, edge]
+
+    steps:
+      - name: Check out code
+        uses: actions/checkout@v7
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v4
+
+      - name: Build test image (with layer cache)
+        uses: docker/build-push-action@v7
+        with:
+          context: .
+          load: true                    # keep the image on this runner
+          tags: cypress-tests:ci
+          cache-from: type=gha          # reuse layers from earlier runs
+          cache-to: type=gha,mode=max
+
+      - name: Run Cypress in Docker
+        env:
+          SPEC: ${{ inputs.spec }}
+        run: |
+          SPEC_ARG=""
+          if [ -n "$SPEC" ]; then SPEC_ARG="--spec $SPEC"; fi
+          docker run --rm \
+            --shm-size=2g \
+            -v "$PWD/cypress/screenshots:/e2e/cypress/screenshots" \
+            -v "$PWD/cypress/videos:/e2e/cypress/videos" \
+            cypress-tests:ci \
+            --browser ${{ matrix.browser }} \
+            --config video=true \
+            $SPEC_ARG
+
+      - name: Upload screenshots and videos
+        if: always()
+        uses: actions/upload-artifact@v7
+        with:
+          name: cypress-${{ matrix.browser }}-run-${{ github.run_number }}
+          path: |
+            cypress/screenshots
+            cypress/videos
+          if-no-files-found: ignore
+          retention-days: 2

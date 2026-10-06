@@ -7,7 +7,7 @@ const sauceDemoLoginPage = new SauceDemoLoginPage();
 describe('SauceDemo login test suite', () => {
 
   beforeEach(() => {
-    cy.fixture('saucedemo/credentials.json').as('credentials');
+    cy.fixture(`${Cypress.env('env')}/credentials.json`).as('credentials');
     cy.get('@credentials').then((credentials) => {
       cy.visit(credentials.baseUrl);
       cy.title().should('eq', 'Swag Labs');

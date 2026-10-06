@@ -14,10 +14,9 @@ describe('SauceDemo login test suite', () => {
     });
   });
 
-  it('User logs in with valid credentials and logs out', function () {
-    sauceDemoLoginPage.login(this.credentials.validUser.username, this.credentials.validUser.password);
-    sauceDemoLoginPage.verifyLoginSuccess();
-    sauceDemoLoginPage.logout();
+    it('Locked out user cannot log in', function () {
+    sauceDemoLoginPage.login(this.credentials.lockedOutUser.username, this.credentials.lockedOutUser.password);
+    sauceDemoLoginPage.verifyErrorMessage('Sorry, this user has been locked out.');
   });
 
 });

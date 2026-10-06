@@ -1,0 +1,143 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 3,
+    "passes": 3,
+    "pending": 0,
+    "failures": 0,
+    "start": "2026-10-02T10:28:59.054Z",
+    "end": "2026-10-02T10:29:07.048Z",
+    "duration": 7994,
+    "testsRegistered": 3,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "2eeb34e1-942d-4374-9487-0db122330897",
+      "title": "",
+      "fullFile": "cypress\\e2e\\tests\\sauceDemoLoginTest.cy.js",
+      "file": "cypress\\e2e\\tests\\sauceDemoLoginTest.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "eab10977-9fe1-4571-96cb-c3578ce35a04",
+          "title": "SauceDemo login test suite",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "User logs in with valid credentials and logs out",
+              "fullTitle": "SauceDemo login test suite User logs in with valid credentials and logs out",
+              "timedOut": null,
+              "duration": 2530,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "sauceDemoLoginPage.login(this.credentials.validUser.username, this.credentials.validUser.password);\nsauceDemoLoginPage.verifyLoginSuccess();\nsauceDemoLoginPage.logout();",
+              "err": {},
+              "uuid": "4afd52e8-fc6e-4a09-bcaf-486863a891c8",
+              "parentUUID": "eab10977-9fe1-4571-96cb-c3578ce35a04",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Locked out user cannot log in",
+              "fullTitle": "SauceDemo login test suite Locked out user cannot log in",
+              "timedOut": null,
+              "duration": 1236,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "sauceDemoLoginPage.login(this.credentials.lockedOutUser.username, this.credentials.lockedOutUser.password);\nsauceDemoLoginPage.verifyErrorMessage('Sorry, this user has been locked out.');",
+              "err": {},
+              "uuid": "d5c036ec-ea2a-4657-8426-518eed602761",
+              "parentUUID": "eab10977-9fe1-4571-96cb-c3578ce35a04",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "User cannot log in with invalid credentials",
+              "fullTitle": "SauceDemo login test suite User cannot log in with invalid credentials",
+              "timedOut": null,
+              "duration": 1099,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "sauceDemoLoginPage.login(this.credentials.invalidUser.username, this.credentials.invalidUser.password);\nsauceDemoLoginPage.verifyErrorMessage('Username and password do not match any user in this service');",
+              "err": {},
+              "uuid": "013d841b-55e4-4103-bb2d-8248715cb300",
+              "parentUUID": "eab10977-9fe1-4571-96cb-c3578ce35a04",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "4afd52e8-fc6e-4a09-bcaf-486863a891c8",
+            "d5c036ec-ea2a-4657-8426-518eed602761",
+            "013d841b-55e4-4103-bb2d-8248715cb300"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 4865,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports",
+        "overwrite": false,
+        "html": true,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}

@@ -1,0 +1,90 @@
+{
+  "stats": {
+    "suites": 0,
+    "tests": 1,
+    "passes": 0,
+    "pending": 0,
+    "failures": 1,
+    "start": "2025-08-05T12:00:31.123Z",
+    "end": "2025-08-05T12:00:31.606Z",
+    "duration": 483,
+    "testsRegistered": 1,
+    "passPercent": 0,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "98e8d76d-12d2-415b-89fd-c628e2a53434",
+      "title": "",
+      "fullFile": "cypress\\e2e\\tests\\loginTest.cy.js",
+      "file": "cypress\\e2e\\tests\\loginTest.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [
+        {
+          "title": "An uncaught error was detected outside of a test",
+          "fullTitle": "An uncaught error was detected outside of a test",
+          "timedOut": null,
+          "duration": 403,
+          "state": "failed",
+          "speed": null,
+          "pass": false,
+          "fail": true,
+          "pending": false,
+          "context": null,
+          "code": "throw err;",
+          "err": {
+            "message": "CypressError: The following error originated from your test code, not from Cypress.\n\n  > Cannot overwite command for: `dropdown`. An existing command does not exist by that name.\n\nWhen Cypress detects uncaught errors originating from your test code it will automatically fail the current test.\n\nCypress could not associate this error to any specific test.\n\nWe dynamically generated a new test to display this failure.\n\nhttps://on.cypress.io/api/custom-commands",
+            "estack": "CypressError: The following error originated from your test code, not from Cypress.\n\n  > Cannot overwite command for: `dropdown`. An existing command does not exist by that name.\n\nWhen Cypress detects uncaught errors originating from your test code it will automatically fail the current test.\n\nCypress could not associate this error to any specific test.\n\nWe dynamically generated a new test to display this failure.\n\nhttps://on.cypress.io/api/custom-commands\n    at ./cypress/support/commands.js (webpack://ecom_aut/./cypress/support/commands.js:12:17)\n    at __webpack_require__ (webpack://ecom_aut/webpack/bootstrap:19:0)\n    at eval (webpack://ecom_aut/./cypress/support/e2e.js:17:0)\n    at eval (http://localhost:61062/__cypress/tests?p=cypress\\support\\e2e.js:539:3)\n    at eval (http://localhost:61062/__cypress/tests?p=cypress\\support\\e2e.js:541:12)\n    at eval (<anonymous>)\n\nFrom Cypress Internals:\n      at internalError (http://localhost:61062/__cypress/runner/cypress_runner.js:111969:91)\n      at Object.overwrite (http://localhost:61062/__cypress/runner/cypress_runner.js:112058:11)\n      at <unknown> (http://localhost:61062/__cypress/runner/cypress_runner.js:111853:23)\n      at tryCatcher (http://localhost:61062/__cypress/runner/cypress_runner.js:1807:23)\n      at Object.gotValue (http://localhost:61062/__cypress/runner/cypress_runner.js:6476:18)\n      at Object.gotAccum (http://localhost:61062/__cypress/runner/cypress_runner.js:6465:25)\n      at Object.tryCatcher (http://localhost:61062/__cypress/runner/cypress_runner.js:1807:23)\n      at Promise._settlePromiseFromHandler (http://localhost:61062/__cypress/runner/cypress_runner.js:1519:31)\n      at Promise._settlePromise (http://localhost:61062/__cypress/runner/cypress_runner.js:1576:18)\n      at Promise._settlePromiseCtx (http://localhost:61062/__cypress/runner/cypress_runner.js:1613:10)\n      at _drainQueueStep (http://localhost:61062/__cypress/runner/cypress_runner.js:2411:12)\n      at _drainQueue (http://localhost:61062/__cypress/runner/cypress_runner.js:2400:9)\n      at Async._drainQueues (http://localhost:61062/__cypress/runner/cypress_runner.js:2416:5)\n      at Async.drainQueues (http://localhost:61062/__cypress/runner/cypress_runner.js:2286:14)",
+            "diff": null
+          },
+          "uuid": "e47767cc-39cd-49bd-9af1-c5acbfac550e",
+          "parentUUID": "98e8d76d-12d2-415b-89fd-c628e2a53434",
+          "isHook": false,
+          "skipped": false
+        }
+      ],
+      "suites": [],
+      "passes": [],
+      "failures": [
+        "e47767cc-39cd-49bd-9af1-c5acbfac550e"
+      ],
+      "pending": [],
+      "skipped": [],
+      "duration": 403,
+      "root": true,
+      "rootEmpty": false,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports",
+        "overwrite": false,
+        "html": true,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}

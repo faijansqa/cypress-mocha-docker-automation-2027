@@ -1,0 +1,105 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 0,
+    "pending": 1,
+    "failures": 0,
+    "start": "2026-10-05T09:00:03.126Z",
+    "end": "2026-10-05T09:00:03.163Z",
+    "duration": 37,
+    "testsRegistered": 1,
+    "passPercent": null,
+    "pendingPercent": 100,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "51284678-de75-4c23-b77d-cbcc8c4c8ad1",
+      "title": "",
+      "fullFile": "cypress/e2e/tests/addToCartTest.cy.js",
+      "file": "cypress/tests/addToCartTest.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "fe661a0e-fb2e-4d89-abae-69c02287d99b",
+          "title": "Add to cart test suite",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "User adds a bag to the cart",
+              "fullTitle": "Add to cart test suite User adds a bag to the cart",
+              "timedOut": null,
+              "duration": 0,
+              "state": "pending",
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": true,
+              "context": null,
+              "code": "const addToCartPageLoc = new _addToCartActionPage.AddToCartActionPage();\ncy.get('@credentials').then(credentials => {\n  cy.visit(credentials.baseUrl);\n  cy.title().should('include', 'Home Page');\n});\naddToCartPageLoc.selectBag();\nconst bagText = this.testData.bagText;\nconst amount = this.testData.bagAmount;\naddToCartPageLoc.clickOnBagByTextEle(bagText);\naddToCartPageLoc.verifyTheBagPrice(amount);\naddToCartPageLoc.verifyAddToCartItem();\naddToCartPageLoc.verifyOrderSummary();",
+              "err": {},
+              "uuid": "c9142923-0f24-4e54-b676-a232e0966cda",
+              "parentUUID": "fe661a0e-fb2e-4d89-abae-69c02287d99b",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [],
+          "pending": [
+            "c9142923-0f24-4e54-b676-a232e0966cda"
+          ],
+          "skipped": [],
+          "duration": 0,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports",
+        "overwrite": false,
+        "html": true,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}

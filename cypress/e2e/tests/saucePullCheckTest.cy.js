@@ -13,11 +13,10 @@ describe('SauceDemo login test suite', () => {
       cy.title().should('eq', 'Swag Labs');
     });
   });
-
-  it('User logs in with valid credentials and logs out', function () {
-    sauceDemoLoginPage.login(this.credentials.validUser.username, this.credentials.validUser.password);
-    sauceDemoLoginPage.verifyLoginSuccess();
-    sauceDemoLoginPage.logout();
+  
+  it('User cannot log in with invalid credentials', function () {
+    sauceDemoLoginPage.login(this.credentials.invalidUser.username, this.credentials.invalidUser.password);
+    sauceDemoLoginPage.verifyErrorMessage('Username and password do not match any user in this service');
   });
 
 });

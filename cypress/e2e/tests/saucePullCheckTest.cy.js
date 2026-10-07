@@ -14,9 +14,13 @@ describe('SauceDemo login test suite', () => {
     });
   });
 
-    it('Locked out user cannot log in', function () {
+  it('Locked out user cannot log in', function () {
     sauceDemoLoginPage.login(this.credentials.lockedOutUser.username, this.credentials.lockedOutUser.password);
     sauceDemoLoginPage.verifyErrorMessage('Sorry, this user has been locked out.');
+  });
+
+  it('Empty test to check the github branch compatibility', function () {
+
   });
 
 });

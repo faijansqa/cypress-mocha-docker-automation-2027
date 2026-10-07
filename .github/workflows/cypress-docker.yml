@@ -39,6 +39,9 @@ jobs:
           cache-from: type=gha          # reuse layers from earlier runs
           cache-to: type=gha,mode=max
 
+      - name: Show images on the runner
+        run: docker images
+
       - name: Run Cypress in Docker
         env:
           SPEC: ${{ inputs.spec }}
